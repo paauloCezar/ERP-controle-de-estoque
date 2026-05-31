@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Controle de Estoque</title>
+
+    <!-- Carrega o estilo da aplicação -->
+    <link rel="stylesheet" href="STYLE.CSS">
+</head>
+
+<body>
+
+    <!-- Tela de login / registro exibida antes de acessar o sistema -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <!-- Formulário de login -->
+            <div id="loginForm" class="login-form">
+                <h2>Entrar</h2>
+                <input type="text" id="loginUser" placeholder="Usuário">
+                <input type="password" id="loginPass" placeholder="Senha">
+                <button onclick="handleLogin()">Entrar</button>
+                <p id="loginError" class="login-error"></p>
+                <p><small>Não tem conta? <a href="#" onclick="showRegister();return false;">Criar conta</a></small></p>
+            </div>
+
+            <!-- Formulário de registro de novo usuário -->
+            <div id="registerForm" class="register-form hidden">
+                <h2>Criar Conta</h2>
+                <input type="text" id="registerUser" placeholder="Novo usuário">
+                <input type="password" id="registerPass" placeholder="Senha">
+                <input type="password" id="registerPass2" placeholder="Confirme a senha">
+                <button onclick="handleRegister()">Criar conta</button>
+                <p id="registerError" class="login-error"></p>
+                <p><small>Já tem conta? <a href="#" onclick="showLogin();return false;">Entrar</a></small></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu lateral com navegação principal do ERP -->
+    <div class="sidebar">
+
+        <h2>ERP Estoque</h2>
+
+        <ul>
+            <li><a href="#" onclick="showDashboard();return false;">Dashboard</a></li>
+            <li><a href="#" onclick="toggleHistorico();return false;">Histórico</a></li>
+            <li><a href="#" onclick="showRelatorios();return false;">Relatórios</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Área principal exibida após login -->
+    <main id="mainContent" class="conteudo hidden">
+
+        <header>
+            <h1>Painel de Controle</h1>
+        </header>
+
+        <!-- Cartões de resumo de estoque e movimentações -->
+        <section class="cards">
+
+            <div class="card">
+                <h3>Total Produtos</h3>
+                <span id="totalProdutos">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Entradas</h3>
+                <span id="totalEntradas">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Saídas</h3>
+                <span id="totalSaidas">0</span>
+            </div>
+
+        </section>
+
+        <!-- Formulário de cadastro de produto -->
+        <section class="cadastro">
+
+            <h2>Cadastrar Produto</h2>
+
+            <input type="text" id="nomeProduto" placeholder="Nome do Produto">
+
+            <input type="number" id="quantidadeProduto" placeholder="Quantidade">
+
+            <button onclick="adicionarProduto()">
+                Adicionar
+            </button>
+
+        </section>
+
+        <!-- Lista de produtos cadastrados com busca e ações -->
+        <section class="lista-produtos">
+
+            <h2>Produtos Cadastrados</h2>
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar produto..."
+                onkeyup="pesquisarProduto()">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaProdutos"></tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+    <!-- Seção de histórico de movimentações aparece como modal/overlay -->
+    <section id="historicoSection" class="lista-produtos hidden">
+        <h2>Histórico de Movimentações</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Usuário</th>
+                    <th>Tipo</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody id="historicoTabela"></tbody>
+        </table>
+        <div style="margin-top:12px"><button onclick="toggleHistorico()">Fechar histórico</button></div>
+    </section>
+
+    <!-- Seção de relatórios com filtros e exportação de PDF -->
+    <section id="relatoriosSection" class="lista-produtos hidden">
+        <h2>Relatórios</h2>
+
+        <div class="relatorio-filtros">
+            <label>De: <input type="date" id="relatorioFrom"></label>
+            <label>Até: <input type="date" id="relatorioTo"></label>
+            <label>Usuário: <select id="relatorioUser"><option value="">Todos</option></select></label>
+            <button onclick="atualizarRelatorio()">Gerar Movimentações</button>
+            <button onclick="exportarRelatorioMovimentacoesPDF()">Exportar Movimentações em PDF</button>
+            <button onclick="showRelatorios()">Fechar Relatórios</button>
+        </div>
+
+        <h3>Estoque Atual</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody id="relatorioProdutosTabela"></tbody>
+        </table>
+        <div style="margin-top:10px">
+            <button onclick="exportarRelatorioProdutosPDF()">Exportar Estoque em PDF</button>
+        </div>
+
+        <h3 style="margin-top:20px">Movimentações</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Usuário</th>
+                    <th>Tipo</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody id="relatorioTabela"></tbody>
+        </table>
+    </section>
+
+    <!-- Carrega a lógica da aplicação: autenticação, estoque, histórico e relatórios -->
+    <script src="SCRIPT.JS"></script>
+
+</body>
+</html>
