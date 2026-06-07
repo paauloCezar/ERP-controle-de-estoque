@@ -6,4 +6,7 @@
   @import url(../blocks/menu.css);
   @import url(../blocks/content.css);
   @import url(../blocks/sidebar.css);
-  @import url(../blocks/footer.css);
+  @import url(../blocks/product.css);
+  @import url(../blocks/search.css);
+  @import url(../blocks/table.css);
+  @import url(../blocks/form.css);
