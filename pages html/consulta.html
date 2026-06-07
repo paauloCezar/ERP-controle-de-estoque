@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Organize seu estoque" />
+    <meta name="keywords" content="Organização, controle." />
+    <meta name="author" content="Guilherme Tyszkouski" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultar Produtos - ERP</title>
+    <link rel="stylesheet" href="../pages/index.css" />
+    <link rel="shortcut icon" href="/favicon" />
+     <script src="../scripts/login.js" defer></script>
+    <script src="../scripts/deashbord.js" defer></script>
+  </head>
+
+  <body class="body body__deashbord">
+    <div class="page">
+
+      <aside class="sidebar">
+        <div class="sidebar__logo">
+          <img src="../images/logo.svg" class="sidebar__logo-img" alt="Logo ERP" />
+        </div>
+
+        <nav class="sidebar__menu">
+          <a href="dashboard.html" class="sidebar__menu-item">
+            <img src="../images/inicio.svg" class="sidebar__icon" alt="" />
+            Início
+          </a>
+
+          <a href="cadastro.html" class="sidebar__menu-item">
+            <img src="../images/cadastro.svg" class="sidebar__icon" alt="" />
+            Cadastrar Produto
+          </a>
+
+          <a href="consulta.html" class="sidebar__menu-item active">
+            <img src="../images/consulta.svg" class="sidebar__icon" alt="" />
+            Consultar Produto
+          </a>
+
+          <a href="login.html" class="sidebar__menu-item sidebar__menu-item_logout">
+            <img src="../images/sair.svg" class="sidebar__icon" alt="" />
+            Sair
+          </a>
+        </nav>
+      </aside>
+
+      <main class="content content__dashboard">
+
+        <div class="search-container">
+          <div class="search-container__header">
+            <div class="search-container__title-group">
+              <div class="search-container__icon-circle">
+                <img src="../images/consulta.svg" alt="" />
+              </div>
+              <div>
+                <h1 class="search-container__title">Consultar Produtos</h1>
+                <p class="search-container__subtitle">Pesquise por um dos critérios abaixo.</p>
+              </div>
+            </div>
+            <a href="dashboard.html" class="search-container__close-btn">✕</a>
+          </div>
+
+          <form class="search-form">
+            <div class="search-form__row">
+              <div class="search-form__group">
+                <label>Código Interno</label>
+                <input type="text" placeholder="Ex.: INT000123" />
+              </div>
+              <div class="search-form__group">
+                <label>Código do Fabricante</label>
+                <input type="text" placeholder="Ex.: SKF1234" />
+              </div>
+              <div class="search-form__group">
+                <label>Descrição</label>
+                <input type="text" placeholder="Ex.: Rolamento" />
+              </div>
+            </div>
+            <div class="search-form__actions">
+              <button type="reset" class="search-form__btn-clean">Limpar</button>
+              <button type="submit" class="search-form__btn-submit">Pesquisar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="table-container">
+          <h2 class="table-container__title">Resultados encontrados (0)</h2>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Código Interno</th>
+                  <th>Código Fabricante</th>
+                  <th>Descrição</th>
+                  <th>Marca</th>
+                  <th>Valor (R$)</th>
+                  <th>Estoque</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                </tbody>
+            </table>
+          </div>
+
+          </div>
+
+      </main>
+
+    </div>
+  </body>
+</html>
