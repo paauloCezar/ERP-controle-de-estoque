@@ -9,15 +9,19 @@
     <title>ERP CONTROLE ESTOQUE</title>
     <link rel="stylesheet" href="../pages/index.css" />
     <link rel="shortcut icon" href="/favicon" />
-    <script src="./scripts/index.js" defer></script>
+    <script src="../scripts/login.js" defer></script>
+    <script src="../scripts/deashbord.js" defer></script>
   </head>
 
   <body class="body body__deashbord">
     <div class="page">
-
       <aside class="sidebar">
         <div class="sidebar__logo">
-          <img src="../images/logo.png" class="sidebar__logo-img" alt="Logo ERP" />
+          <img
+            src="../images/logo.svg"
+            class="sidebar__logo-img"
+            alt="Logo ERP"
+          />
         </div>
 
         <nav class="sidebar__menu">
@@ -36,17 +40,59 @@
             Consultar Produto
           </a>
 
-          <a href="login.html" class="sidebar__menu-item sidebar__menu-item_logout">
+          <a
+            href="login.html"
+            class="sidebar__menu-item sidebar__menu-item_logout"
+          >
             <img src="../images/sair.svg" class="sidebar__icon" alt="" />
             Sair
           </a>
         </nav>
       </aside>
 
-      <header class="header"></header>
-      <main class="content"></main>
-      <footer class="footer"></footer>
+      <main class="content content__dashboard">
+        <div class="dashboard__welcome">
+          <h1 class="dashboard__title">
+            Olá, <span class="user-name">Admin</span>! 👋
+          </h1>
+          <p class="dashboard__subtitle">O que deseja fazer?</p>
+          <span class="dashboard__tip"
+            >Selecione uma das opções abaixo para continuar.</span
+          >
+        </div>
 
+        <div class="dashboard__cards">
+          <div class="dashboard-card">
+            <div class="dashboard-card__icon-wrapper">
+              <img
+                src="../images/cadastro.svg"
+                class="dashboard-card__icon"
+                alt=""
+              />
+            </div>
+            <h2 class="dashboard-card__title">Cadastrar Produto</h2>
+            <p class="dashboard-card__description">
+              Adicione um novo produto ao catálogo.
+            </p>
+            <a href="cadastro.html" class="dashboard-card__button">Abrir</a>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card__icon-wrapper">
+              <img
+                src="../images/consulta.svg"
+                class="dashboard-card__icon"
+                alt=""
+              />
+            </div>
+            <h2 class="dashboard-card__title">Consultar Produtos</h2>
+            <p class="dashboard-card__description">
+              Pesquise e visualize os produtos cadastrados.
+            </p>
+            <a href="consulta.html" class="dashboard-card__button">Abrir</a>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>
