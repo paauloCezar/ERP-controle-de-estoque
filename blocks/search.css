@@ -1,0 +1,127 @@
+.search-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  width: 100%;
+  max-width: 960px;
+  padding: 24px;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
+.search-container__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.search-container__title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.search-container__icon-circle {
+  width: 36px;
+  height: 36px;
+  background-color: #e52d2d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-container__icon-circle img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.search-container__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.search-container__subtitle {
+  font-size: 13px;
+  color: #777777;
+  margin-top: 4px;
+}
+
+.search-container__close-btn {
+  font-size: 20px;
+  color: #555555;
+  text-decoration: none;
+  padding: 4px;
+  line-height: 1;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.search-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-form__group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.search-form__group input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-form__group input:focus {
+  border-color: #e52d2d;
+}
+
+.search-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.search-form__btn-clean {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-form__btn-submit {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #e52d2d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
