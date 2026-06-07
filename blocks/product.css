@@ -1,0 +1,132 @@
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.product-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.product-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.product-form__group_full {
+  width: 100%;
+}
+
+.product-form__group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.product-form__label-info {
+  font-weight: 400;
+  color: #777777;
+}
+
+.product-form__required {
+  color: #e52d2d;
+}
+
+.product-form__group input,
+.product-form__group select {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  color: #1a1a1a;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-form__group input:focus,
+.product-form__group select:focus {
+  border-color: #e52d2d;
+  box-shadow: 0 0 0 3px rgba(229, 45, 45, 0.08);
+}
+
+.product-form__input_readonly {
+  background-color: #f0f2f5 !important;
+  color: #555555 !important;
+  border-color: #e0e0e0 !important;
+  cursor: not-allowed;
+}
+
+.product-form__select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.product-form__select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.product-form__select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-top-color: #555555;
+  pointer-events: none;
+}
+
+.product-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.product-form__btn-cancel {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.product-form__btn-cancel:hover {
+  background-color: #f9f9f9;
+  border-color: #cccccc;
+  color: #1a1a1a;
+}
+
+.product-form__btn-submit {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #e52d2d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.product-form__btn-submit:hover {
+  background-color: #c82323;
+}
