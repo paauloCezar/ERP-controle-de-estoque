@@ -1,0 +1,98 @@
+.table-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  width: 100%;
+  max-width: 960px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.table-container__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* O Bloco Pai da Tabela */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Estilo das células de cabeçalho (th) filhas de .data-table */
+.data-table th {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  padding: 14px 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Estilo das células de dados (td) filhas de .data-table */
+.data-table td {
+  font-size: 13px;
+  color: #444444;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Efeito de hover nas linhas (tr) filhas de .data-table */
+.data-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Botão de ação que fica dentro da tabela */
+.data-table__action-btn {
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555555;
+  transition: background-color 0.2s ease;
+}
+
+.data-table__action-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Paginação abaixo da tabela */
+.table-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.table-pagination__btn {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.table-pagination__btn_active {
+  background-color: #e52d2d;
+  color: #ffffff;
+  border-color: #e52d2d;
+}
+
+.table-pagination__btn:hover:not(.table-pagination__btn_active) {
+  background-color: #f5f5f5;
+}
