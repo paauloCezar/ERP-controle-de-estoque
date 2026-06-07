@@ -45,4 +45,4 @@ A lógica de JavaScript foi separada de forma estratégica para evitar conflitos
 │   └── (arquivos de estilização)
 └── scripts/
     ├── login.js        # Cuida estritamente da validação e alternância do Login
-    └── produtos.js     # Controla o LocalStorage, regras de cadastro e a tabela
+    └── deashbord.js     # Controla o LocalStorage, regras de cadastro e a tabela
