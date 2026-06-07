@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Organize seu estoque" />
+    <meta name="keywords" content="Organização, controle." />
+    <meta name="author" content="Guilherme Tyszkouski" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Produto - ERP</title>
+    <link rel="stylesheet" href="../pages/index.css" />
+    <link rel="shortcut icon" href="/favicon" />
+    <script src="../scripts/login.js" defer></script>
+    <script src="../scripts/deashbord.js" defer></script>
+  </head>
+
+  <body class="body body__deashbord">
+    <div class="page">
+
+      <aside class="sidebar">
+        <div class="sidebar__logo">
+          <img src="../images/logo.svg" class="sidebar__logo-img" alt="Logo ERP" />
+        </div>
+
+        <nav class="sidebar__menu">
+          <a href="dashboard.html" class="sidebar__menu-item">
+            <img src="../images/inicio.svg" class="sidebar__icon" alt="" />
+            Início
+          </a>
+
+          <a href="cadastro.html" class="sidebar__menu-item active">
+            <img src="../images/cadastro.svg" class="sidebar__icon" alt="" />
+            Cadastrar Produto
+          </a>
+
+          <a href="consulta.html" class="sidebar__menu-item">
+            <img src="../images/consulta.svg" class="sidebar__icon" alt="" />
+            Consultar Produto
+          </a>
+
+          <a href="login.html" class="sidebar__menu-item sidebar__menu-item_logout">
+            <img src="../images/sair.svg" class="sidebar__icon" alt="" />
+            Sair
+          </a>
+        </nav>
+      </aside>
+
+      <main class="content content__dashboard">
+
+        <div class="search-container">
+          <div class="search-container__header">
+            <div class="search-container__title-group">
+              <div class="search-container__icon-circle">
+                <img src="../images/cadastro.svg" alt="" />
+              </div>
+              <div>
+                <h1 class="search-container__title">Cadastrar Produto</h1>
+                <p class="search-container__subtitle">Preencha os campos abaixo para registrar um novo item no estoque.</p>
+              </div>
+            </div>
+            <a href="dashboard.html" class="search-container__close-btn">✕</a>
+          </div>
+
+          <!-- Adicionado id="form-cadastro" para o JS escutar o botão salvar -->
+          <form class="search-form" id="form-cadastro">
+            <div class="search-form__row">
+              <div class="search-form__group">
+                <label>Código Interno</label>
+                <!-- O ID "prod-id" fica desabilitado pois será gerado de forma automática -->
+                <input type="text" id="prod-id" value="Gerado Automaticamente" disabled />
+              </div>
+              <div class="search-form__group">
+                <label>Código do Fabricante *</label>
+                <input type="text" id="prod-fabricante" placeholder="Ex.: SKF1234" required />
+              </div>
+              <div class="search-form__group">
+                <label>Descrição *</label>
+                <input type="text" id="prod-descricao" placeholder="Ex.: Rolamento Dianteiro" required />
+              </div>
+            </div>
+
+            <div class="search-form__row">
+              <div class="search-form__group">
+                <label>Marca *</label>
+                <input type="text" id="prod-marca" placeholder="Ex.: SKF" required />
+              </div>
+              <div class="search-form__group">
+                <label>Valor (R$) *</label>
+                <input type="text" id="prod-valor" placeholder="Ex.: 123,45" required />
+              </div>
+              <div class="search-form__group">
+                <label>Estoque *</label>
+                <input type="number" id="prod-estoque" placeholder="Ex.: 10" required />
+              </div>
+            </div>
+
+            <div class="search-form__actions">
+              <button type="reset" class="search-form__btn-clean">Limpar</button>
+              <button type="submit" class="search-form__btn-submit">Salvar Produto</button>
+            </div>
+          </form>
+        </div>
+
+      </main>
+
+    </div>
+  </body>
+</html>
